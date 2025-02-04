@@ -1,11 +1,12 @@
+import cats.effect.{IO, IOApp}
 import datatypes.Complex
 import othertypes.Qubit
 import othertypes.Qubit.measure
 
 //TODO - add and play with Cats library
 //TODO - check out other type level libraries
-object Main {
-  def main(args: Array[String]): Unit = {
+object Main extends IOApp.Simple {
+  def run: IO[Unit] = {
     val qubit = Qubit(
       Vector(
         Complex(1.0, 0.0),
@@ -13,7 +14,7 @@ object Main {
       )
     )
     val result = measure(qubit)
-    println(s"Measured: |$result⟩")
+    IO.println(s"Measured: |$result⟩")
   }
 }
 
