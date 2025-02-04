@@ -1,4 +1,5 @@
 import cats.effect.{IO, IOApp}
+import datatypes.Algebras.RingNumber
 import datatypes.Complex
 import othertypes.Qubit
 import othertypes.Qubit.measure
@@ -14,7 +15,10 @@ object Main extends IOApp.Simple {
       )
     )
     val result = measure(qubit)
-    IO.println(s"Measured: |$result⟩")
+    for {
+      _ <- IO.println(s"Trying out this algebra library - ${RingNumber(1)}")
+      _ <- IO.println(s"Measured: |$result⟩")
+    } yield ()
   }
 }
 
