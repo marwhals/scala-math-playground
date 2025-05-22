@@ -1,5 +1,3 @@
----
-
 ### 1. **Limit Definition of the Derivative**
 
 The **derivative** of a function $ f(x) $ at a point $ x = a $ is defined as:
